@@ -3,11 +3,16 @@ import styled from 'styled-components'
 
 export const MainContainer = styled.div`
   margin: 20px;
+  width: 100%;
   display: flex;
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const FormContainer = styled.form`
-  width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `
@@ -15,6 +20,9 @@ export const MainHeading = styled.h1`
   font-size: 45px;
   font-weight: 600;
   color: #35469c;
+  @media screen and (max-width: 576px) {
+    font-size: 35px;
+  }
 `
 
 export const LabelHeading = styled.label`
@@ -23,13 +31,10 @@ export const LabelHeading = styled.label`
   margin-top: 10px;
   color: #5a7184;
 `
-//   ${props => {
-//     console.log(props.myvalue)
-//     return props.myvalue > 2 ? lightcyan : lightgreen
-//   }}
+
 export const InputHeading = styled.input`
   height: 35px;
-  width: 320px;
+  max-width: 320px;
   background-color: ${props => {
     console.log(props.myvalue)
     return props.myvalue > 6 ? 'lightyellow' : 'lightgreen'
@@ -40,19 +45,20 @@ export const InputHeading = styled.input`
   border-radius: 8px;
   border: 1px solid #7e858e;
   outline: none;
+  margin-right: 5px;
 `
 export const SelectOptions = styled.select`
   //   padding-left: 10px;
   height: 28px;
   width: 200px;
   color: #0b69ff;
-  font-size: 18px;
-  padding-left: 20px;
-  border-radius: 8px;
+  font-size: 15px;
+  padding-left: 10px;
+  border-radius: 5px;
   border: 1px solid #7e858e;
 `
 export const OptionsHeading = styled.option`
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   color: #35469c;
   :checked {
@@ -73,14 +79,14 @@ export const Button = styled.button`
 export const DisplayContainer = styled.div`
   background-size: cover;
   background-image: url(${props => props.imageValue});
-  width: 520px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 25px 10px;
 `
-export const TopHeading = styled.h1`
+export const TopHeading = styled.p`
   font-size: ${props => props.mysize}px;
   font-weight: 600;
   color: #ffffff;
